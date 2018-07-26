@@ -1,0 +1,25 @@
+<ion-view view-title="Historial de mis Viajes">
+  
+  <ion-content>
+    <ion-list ng-controller='HistoryCtrl'>
+  		<ion-item ng-repeat="history in TravelList" class="item-remove-animate" href="#/tab/account/history/{{history.id}}">
+  			<div class="row">
+  				<div id="column-1">
+	  				<div id="title-route">
+	  					<h2>Ruta:</h2>
+	  				</div>
+	  				<div id="name-route" >
+		    			<div>{{history.route}}</div>
+		    		</div>
+	    		</div>
+	    		<div id= "date-route" class="balanced">
+	    			<div>{{history.date}}</div>
+	    		</div>
+	    		<div id="alert-route">
+	    			<div ng-show ="history.ranking == undefined"><i class="ion-alert-circled assertive"></i></div>
+	    		</div>
+    		</div>
+  		</ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

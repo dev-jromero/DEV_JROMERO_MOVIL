@@ -1,0 +1,33 @@
+<div class="modal">
+  <ion-header-bar class="bar bar-header">
+    <h1 class="title"></h1>
+    <button class="button button-clear button-positive" ng-click="closeSignUpModal()">X</button>
+  </ion-header-bar>
+  <ion-content class="auth-form">
+    <div class="row">
+      <div class="col"><button class="button button-clear button-dark button-small left-auth-button">Forgot Password?</button></div>
+      <div class="col"><button class="button button-clear button-dark button-small right-auth-button">Log In</button></div>
+    </div>
+    <div class="padding">
+      <div class="list card">
+        <form name='signUpForm' novalidate>
+          <label class="item item-input">
+            <input ng-model='signUpModel.email' type="email" required placeholder="Email">
+          </label>
+          <label class="item item-input">
+            <input ng-model='signUpModel.password' type="password" required placeholder="Password">
+          </label>
+          <label class="item item-input">
+            <input ng-model='signUpModel.firstName' type="text" placeholder="First name">
+          </label>
+          <label class="item item-input">
+            <input ng-model='signUpModel.lastName' type="text" placeholder="Second name">
+          </label>
+        </form>
+      </div>
+      <button ng-disabled="signUpForm.$invalid" ng-click='signUpUser()' class="button button-block button-balanced">
+        Sign Up
+      </button>
+    </div>
+  </ion-content>
+</div>

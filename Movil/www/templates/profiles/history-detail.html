@@ -1,0 +1,35 @@
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+<ion-view   class="padding" view-title="{{Details.route}}">
+  <ion-content class="padding">
+    <ion-list>
+      <ion-item class="item-icon-left">
+        <i class="icon ion-ios-clock-outline"></i>
+        {{Details.date}}
+      </ion-item>
+    </ion-list>
+    <ion-list>
+      <ion-item class="item-icon-left">
+        <i class="icon ion-person-stalker"></i>
+        {{Details.driver_name}}
+      </ion-item>
+    </ion-list>
+    <ion-list>
+      <ion-item class="item-icon-left">
+        <i class="icon ion-model-s"></i>
+            <div ng-if="Details.ranking" class="item-note" >
+              <i class="ion-star positive" ng-repeat="Detail in getNumber(Details.ranking) track by $index"></i>
+              <i class="ion-star" ng-repeat="Detail in getNumber(5-Details.ranking) track by $index"></i>
+            </div>
+            <div ng-show="Details.ranking == undefined" class="item-note">
+              <a class="button button-outline button-calm" ng-href="#/tab/account/review/{{Details.route_id}}" >Calificar</a>
+            </div>
+        </ion-item>  
+      </ion-list>
+    <button class="button button-block button-outline button-assertive padding" >Reportar</button>   
+  </ion-content>
+</ion-view>

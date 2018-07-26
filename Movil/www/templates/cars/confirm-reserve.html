@@ -1,0 +1,14 @@
+<ion-view view-title="Reservar Asientos">
+  <ion-content>
+	<div class="card">
+	  <div class="item item-divider-green text-center">
+	    ¡RESERVADO!
+	  </div>
+	  <div class="item item-text-wrap">
+	    En breves momentos el conductor <span class="positive">{{ infoDriver.driver_name }}</span> le llamara para coordinar y confirmar su viaje.
+	    <button class="button button-block button-energized" ng-click="clkreportar(infoDriver.id)">Reportar Incidente</button>
+	    <button class="button button-block button-assertive" ng-click="clkcancelar()">Cancelar Reserva</button>
+	  </div>
+	</div>
+  </ion-content>
+</ion-view>

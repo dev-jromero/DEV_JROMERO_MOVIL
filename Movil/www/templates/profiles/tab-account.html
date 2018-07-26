@@ -1,0 +1,50 @@
+<ion-view view-title="Perfil">
+  <ion-content>
+  <!--historial-->
+    <ion-item>
+      <div class="item item-divider">
+        Historial
+      </div>
+      <a class="item item-icon-left item-icon-right" href="#/tab/account/history">
+      <li class="icon ion-clock"></li>
+      Todos mis viajes
+      <li class="icon ion-ios-arrow-forward"></li>
+      </a>
+      <div class="item item-divider item-button-right">
+            Personal
+
+        <button id="editar" ng-click = "cambiar()" ng-disabled="myForm.$invalid" class="button button-clear button-positive">
+            <i ng-show="!editable" class="ion-edit"></i>
+            <i ng-show="editable" class="icon ion-ios-checkmark"></i>
+        </button>
+      </div>  
+      <!-- personal -->
+        <form name="myForm" novalidate> 
+          <div ng-show="!editable" class="item">
+            {{user.profile_name}}
+          </div>
+          <div ng-show ="editable" class="item item-input item-icon-right">
+              <input type="text" ng-model="user.profile_name" placeholder="Escribe tu nombre" name="nameprofile" required=""/>
+              <i class="icon ion-alert" ng-show="myForm.nameprofile.$error.required"></i>
+          </div>
+          <div ng-show="!editable" class="item">
+            {{user.email}}
+          </div>
+          <div ng-show = "editable" class="item item-input item-icon-right">
+            <input type="email" ng-model="user.email" placeholder = "Escribe tu email" name="emailprofile" required="" />
+            <i class="icon ion-alert" ng-show="myForm.emailprofile.$error.required"></i>
+            <i class="icon ion-alert" ng-show="myForm.emailprofile.$error.email"></i>
+          </div>
+        </form>
+      <!--celular -->
+      <div class="item item-divider">
+        Número de celular
+      </div>
+      <a class="item item-icon-left" href="#">
+      <li class="icon ion-ios-telephone"></li>
+      {{user.cellphone}}
+      </a>
+      <button ng-click="logout()" class="button button-block button-outline button-assertive padding">Cerrar Sesion</button>
+    </ion-item>
+  </ion-content>
+</ion-view>

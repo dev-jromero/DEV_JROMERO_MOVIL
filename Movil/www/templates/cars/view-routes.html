@@ -1,0 +1,33 @@
+<ion-view view-title="Ruta 1">
+  <ion-content>
+    <ion-list>
+      <ion-item collection-repeat="auto in autosList" ng-href="/#/tab/reserve/{{auto.trip_id}}">
+
+        <div class="row" ng-click="showAlert()">
+          <div class="col col-25">
+            <img ng-src="{{auto.image}}" style="width: 65px; height: 65px">
+          </div>
+          <div class="col col-75">
+            <div class="row">
+              <h2><i class="icon ion-person"></i></span>{{auto.driver_name}}</h2>
+            </div>
+            <div class="row">
+              <h4>{{auto.car_brand}}, {{auto.car_description}}</h4>
+            </div>
+            <div class="row">
+              <div class="col col-25">
+                <h3><i class="icon ion-man balanced">: {{auto.seating}}</i></h3>
+              </div>
+              <h3 class="col col-75 balanced">S/. {{auto.price}}</h3>
+            </div>
+            <div class="row">
+              <i class="icon ion-star positive" ng-repeat="star in getNumber(auto.ranking) track by $index"></i>
+              <i class="icon ion-star" ng-repeat="star in getNumber(5-auto.ranking) track by $index"></i>
+            </div>
+          </div>
+        </div>
+
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

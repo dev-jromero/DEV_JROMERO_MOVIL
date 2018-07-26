@@ -1,0 +1,30 @@
+<ion-view view-title="Seleccionar ruta">
+  <ion-content>
+    <div class="padding hermes-wellcome-image">
+      <img src="http://placehold.it/350x300">
+    </div>
+    <ion-list type="list-inset">
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Origen:
+        </div>
+        <select ng-model="departure_id" ng-change="refreshArrivals(departure_id)">
+          <option ng-repeat="departure in departureList" value= {{departure.id}}>{{departure.name}}</option>
+        </select>
+      </label>
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Destino:
+        </div>
+        <select ng-model="route_id">
+          <option ng-repeat="arrival in arrivalList" value={{arrival.id}}>{{arrival.name}}</option>
+        </select>
+      </label>
+    </ion-list>
+    <div class="padding">
+      <button class="button button-block button-balanced" ng-click="goRoute()">
+        Seleccionar
+      </button>
+    </div>
+  </ion-content>
+</ion-view>

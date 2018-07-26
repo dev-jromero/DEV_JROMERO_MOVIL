@@ -1,0 +1,27 @@
+<div class="modal">
+  <ion-header-bar class="bar bar-header">
+    <h1 class="title"></h1>
+    <button class="button button-clear button-positive" ng-click="closeLogInModal()">X</button>
+  </ion-header-bar>
+  <ion-content class="auth-form">
+    <div class="row">
+      <div class="col"><button class="button button-clear button-dark button-small left-auth-button">Forgot Password?</button></div>
+      <div class="col"><button class="button button-clear button-dark button-small right-auth-button">Sign Up</button></div>
+    </div>
+    <div class="padding">
+      <div class="list card">
+        <form name='logInForm' novalidate>
+          <label class="item item-input">
+            <input ng-model='logInModel.email' type="email" required placeholder="Email">
+          </label>
+          <label class="item item-input">
+            <input ng-model='logInModel.password' type="password" required placeholder="Password">
+          </label>
+        </form>
+      </div>
+      <button ng-disabled="logInForm.$invalid" ng-click='logInUser()' class="button button-block button-balanced">
+        Log In
+      </button>
+    </div>
+  </ion-content>
+</div>

@@ -1,0 +1,38 @@
+<ion-view view-title="{{calificar.route}}">
+	<ion-content class="padding">
+		<ion-list>
+			<ion-item class="item-icon-left">
+        		<i class="icon ion-ios-clock-outline"></i> 
+					{{calificar.date}}
+			</ion-item>
+		</ion-list>
+		<ion-list>
+			<ion-item class="item-icon-left">
+			<i class="icon ion-person-stalker"></i>
+				{{calificar.driver_name}}
+			</ion-item>
+		</ion-list>
+		<ion-list>
+			<ion-item class="item-icon-left">
+			<i ng-if="calificar.ranking !== undefined" class="icon ion-model-s"></i>
+			<i ng-if="calificar.ranking == undefined">Calificar</i>
+				<div ng-if="calificar.ranking" class="item-note"> 
+					<i class="ion-star positive" ng-repeat="star in getNumber(calificar.ranking) track by $index"></i>
+	              	<i class="ion-star" ng-repeat="star in getNumber(5-calificar.ranking) track by $index"></i>
+				</div>
+				<div ng-show="calificar.ranking == undefined" class="item-note">
+	              	<button class="ion-star" ng-repeat= "start in getNumber(5-calificar.ranking) track by $index" ng-click="califica($index)"></button>
+	            </div>
+			</ion-item>
+		</ion-list>
+		<div class="list">
+			<label class="item item-input">
+    			<textarea placeholder="Descripcion" rows="5"></textarea>
+  			</label>
+		</div>
+		<div class="button-bar bar-light padding">
+			<a class="button  button-outline button-dark" ng-href="#/tab/account/history/{{calificar.id}}">Cancelar</a>
+			<button ng-click="showConfirm()"  ng-disabled="calificar.ranking == undefined"	class="button  button-outline button-assertive" >Enviar</button>
+		</div> 
+	</ion-content>
+</ion-view>

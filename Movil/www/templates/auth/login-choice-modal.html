@@ -1,0 +1,22 @@
+<div id="login" class="modal">
+  <ion-header-bar class="bar bar-header">
+    <h1 class="title">Inicio de sesión</h1>
+    <button class="button button-clear button-positive" ng-click="closeWelcomeModal()">X</button>
+  </ion-header-bar>
+  <ion-content>
+    <div class="padding">
+      Para usar nuestra aplicación necesitas estar autenticado:
+      <form name='logInForm' novalidate>
+        <label class="item item-input">
+          <input ng-model='logInModel.cellphone' type="text" required placeholder="Celular">
+        </label>
+
+        <button ng-disabled="logInForm.$invalid" ng-click='logInUser()' class="button button-block button-balanced">
+          Log In
+        </button>
+      </form>
+
+      <p class="small-text">Al ingresar, acepto los <a href="#">Terms of Service</a> y <a href="#">Privacy Policy</a> de Hermes.</p>
+    </div>
+  </ion-content>
+</div>

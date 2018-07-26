@@ -1,0 +1,43 @@
+/* Empty. Add your own CSS if you like */
+.hermes-wellcome-image {
+  text-align: center;
+}
+
+#title-route{
+	font-size: 10px;
+	height: 20px;
+}
+#name-route{
+	font-size: 15px;
+	margin: 1em 0em 0em;
+	float: left;
+	font:bold italic large serif;
+}
+#date-route{
+	font-size: 13px;
+	position: absolute;
+	left: 40%;
+	text-align: center;
+	margin: center;
+
+}
+
+#alert-route{
+	font-size: 20px;
+	position: absolute;
+	right: 20px;
+	height: 60%;
+	text-align: center;
+}
+#alert-route>div{
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+#editar{
+	top:0px;
+}
+.card .item-divider-green{
+  background-color: #33cd5f;
+  color: #fafafa;
+}

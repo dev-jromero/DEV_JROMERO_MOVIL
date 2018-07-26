@@ -1,0 +1,24 @@
+<ion-view view-title="Reportar Incidente">
+  <ion-content>
+  	<div class="list card">
+	  <div class="item item-icon-left">
+	    <i class="icon ion-person positive"></i>
+	    {{ infoDriver.name }}
+	  </div>
+
+	  <div class="item item-icon-left">
+	    <i class="icon ion-map positive"></i>
+	    Ruta 1
+	  </div>
+	  <div>
+		<form name="formreport">
+		  <label class="item item-input">
+		    <textarea rows="4" cols="5" placeholder="Escriba aqui sobre su incidencia" ng-model="reclamo" ng-trim="false" maxlength="150" name="txtreclamo" required=""></textarea>
+		  </label>
+		  <h6 class="balanced">{{ 150 - reclamo.length }} caracteres.</h6>
+		  <button class="button button-block button-assertive" ng-disabled="formreport.txtreclamo.$error.required" ng-click="showAlert()">Reportar</button>
+		</form>
+	  </div>
+	</div>
+  </ion-content>
+</ion-view>	

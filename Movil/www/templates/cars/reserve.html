@@ -1,0 +1,47 @@
+<ion-view view-title="Reservar Asientos">
+  <ion-content>
+    <div class="row">
+        <div class="col col-100">
+          <div class="list card">
+            <div class="item item-avatar">
+              <img ng-src="{{infoDriver.image}}" style="width: 75px; height: 75px">
+              <h2>{{ infoDriver.driver_name }}</h2>
+              <p>Conductor</p>
+            </div>
+            <div class="item item-body">
+              <div class="item item-icon-left">
+                <i class="icon ion-android-car"></i>
+                {{ infoDriver.car_brand }} {{ infoDriver.car_description }}
+              </div>
+              <div class="item item-icon-left">
+                <i class="icon ion-man balanced"></i>
+                {{ infoDriver.seating }}
+                <span class="badge badge-assertive">S/.{{ infoDriver.price }}</span>
+              </div>
+              <div class="item item-icon-right">
+                <i class="ion-star energized" ng-repeat="star in getNumber(infoDriver.ranking) track by $index"></i>
+                <i class="ion-star" ng-repeat="star in getNumber(5-infoDriver.ranking) track by $index"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="list card">
+            <div class="item item-divider">
+              ¿Cuantos asientos desea reservar?
+            </div>
+            <div class="item item-text-wrap">
+              <div class="button-bar">
+                  <button class="button button-calm" ng-click="disminuir()">-</button>
+                  <input type="text" ng-model="asiento" class="text-center">
+                  <button class="button button-calm" ng-click="aumentar()">+</button>
+              </div>
+            </div>
+            <div class="item item-divider">
+              Total a pagar: <span class="badge badge-assertive"> S/. {{ total }} </span>
+            </div>
+          </div>
+          <button class="button button-block button-balanced" ng-disabled="asiento == 0" ng-click="reservar(infoDriver.trip_id, asiento)">Reservar</button>
+        </div>
+      </div>
+  </ion-content>
+</ion-view>
